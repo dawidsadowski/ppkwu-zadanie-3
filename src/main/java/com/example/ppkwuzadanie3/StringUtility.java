@@ -1,8 +1,6 @@
 package com.example.ppkwuzadanie3;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.json.XML;
+import org.json.*;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.Arrays;
@@ -22,14 +20,21 @@ public class StringUtility {
         RestTemplate restTemplate = new RestTemplate();
         String formattedJson = restTemplate.getForObject(uri, String.class);
 
-        switch(format) {
-            case "xml":
+        switch (format) {
+            case "xml": {
                 JSONObject json = new JSONObject(formattedJson);
                 formattedJson = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><stringData>";
                 formattedJson = formattedJson + XML.toString(json) + "</stringData>";
                 break;
-            case "csv":
-                formattedJson = "Not yet implemented";
+            }
+            case "csv": {
+                formattedJson = "{\"stringData\":[" + formattedJson + "]}";
+                JSONObject json = new JSONObject(formattedJson);
+                JSONArray jsonArray = json.getJSONArray("stringData");
+                formattedJson = CDL.toString(jsonArray);
+                System.out.println(formattedJson);
+                break;
+            }
         }
 
         return formattedJson;

@@ -19,7 +19,7 @@ public class StringUtilityController {
         return StringUtility.jsonToFormat(text, "xml");
     }
 
-    @GetMapping(value = "/csv/{text}")
+    @GetMapping(value = "/csv/{text}", produces = {"text/plain"})
     String getCsvString(@PathVariable String text) throws JSONException {
         return StringUtility.jsonToFormat(text, "csv");
     }
