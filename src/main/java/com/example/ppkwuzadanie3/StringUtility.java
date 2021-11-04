@@ -25,8 +25,8 @@ public class StringUtility {
         switch(format) {
             case "xml":
                 JSONObject json = new JSONObject(formattedJson);
-                formattedJson = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><text>";
-                formattedJson = formattedJson + XML.toString(json) + "</text>";
+                formattedJson = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><stringData>";
+                formattedJson = formattedJson + XML.toString(json) + "</stringData>";
                 break;
             case "csv":
                 formattedJson = "Not yet implemented";
