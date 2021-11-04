@@ -23,12 +23,17 @@ dane o naszym ciągu znaków):
 ```
 
 ## Wyniki dla poszczególnych wywołań
+
 ### 1. Format JSON
+
 #### Wywołanie API:
+
 ```
 http://localhost:8081/api/json/Happy%20New%202022%20Year!
 ```
+
 #### Wynik:
+
 ```json
 {
   "text": "Happy New 2022 Year!",
@@ -41,11 +46,15 @@ http://localhost:8081/api/json/Happy%20New%202022%20Year!
 ```
 
 ### 2. Format XML
+
 #### Wywołanie API:
+
 ```
 http://localhost:8081/api/xml/Happy%20New%202022%20Year!
 ```
-#### Wynik: 
+
+#### Wynik:
+
 ```xml
 <stringData>
     <upperCase>3</upperCase>
@@ -58,11 +67,15 @@ http://localhost:8081/api/xml/Happy%20New%202022%20Year!
 ```
 
 ### 3. Format CSV
+
 #### Wywołanie API:
+
 ```
 http://localhost:8081/api/csv/Happy%20New%202022%20Year!
 ```
+
 #### Wynik:
+
 ```
 upperCase,lowerCase,specialCharacters,digits,text,whitespace
 3,9,1,4,Happy New 2022 Year!,3
