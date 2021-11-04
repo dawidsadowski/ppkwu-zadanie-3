@@ -1,8 +1,7 @@
 package com.example.ppkwuzadanie3;
 
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
+import org.springframework.web.client.RestTemplate;
+
 import java.util.Arrays;
 import java.util.Locale;
 
@@ -15,7 +14,10 @@ public class StringUtility {
             return "Incorrect result format";
         }
 
-        String formattedJson = "Test";
+        final String uri = "http://localhost:8080/api/" + json;
+
+        RestTemplate restTemplate = new RestTemplate();
+        String formattedJson = restTemplate.getForObject(uri, String.class);
 
         return formattedJson;
     }
