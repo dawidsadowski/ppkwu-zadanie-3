@@ -32,7 +32,6 @@ public class StringUtility {
                 JSONObject json = new JSONObject(formattedJson);
                 JSONArray jsonArray = json.getJSONArray("stringData");
                 formattedJson = CDL.toString(jsonArray);
-                System.out.println(formattedJson);
                 break;
             }
         }
