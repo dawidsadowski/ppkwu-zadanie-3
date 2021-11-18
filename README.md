@@ -19,9 +19,9 @@ dane o naszym ciągu znaków):
 
 ```
 1. http://localhost:8081/api/txt/Happy%20New%202022%20Year!
-1. http://localhost:8081/api/json/Happy%20New%202022%20Year!
-2. http://localhost:8081/api/xml/Happy%20New%202022%20Year!
-3. http://localhost:8081/api/csv/Happy%20New%202022%20Year!
+2. http://localhost:8081/api/json/Happy%20New%202022%20Year!
+3. http://localhost:8081/api/xml/Happy%20New%202022%20Year!
+4. http://localhost:8081/api/csv/Happy%20New%202022%20Year!
 ```
 
 ## Wyniki dla poszczególnych wywołań
