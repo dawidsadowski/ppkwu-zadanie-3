@@ -9,6 +9,11 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api")
 public class StringUtilityController {
 
+    @GetMapping(value = "/txt/{text}", produces = {MediaType.TEXT_PLAIN_VALUE})
+    String getTxtString(@PathVariable String text) throws JSONException {
+        return StringUtility.jsonToFormat(text, "txt");
+    }
+
     @GetMapping(value = "/json/{text}", produces = {MediaType.APPLICATION_JSON_VALUE})
     String getJsonString(@PathVariable String text) throws JSONException {
         return StringUtility.jsonToFormat(text, "json");

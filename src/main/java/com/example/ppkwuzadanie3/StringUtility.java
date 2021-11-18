@@ -11,7 +11,7 @@ public class StringUtility {
     public static String jsonToFormat(String text, String format) throws JSONException {
         format = format.toLowerCase(Locale.ROOT);
 
-        if (Arrays.stream(new String[]{"json", "xml", "csv"}).noneMatch(format::contains)) {
+        if (Arrays.stream(new String[]{"txt", "json", "xml", "csv"}).noneMatch(format::contains)) {
             return "Incorrect result format";
         }
 
@@ -21,6 +21,20 @@ public class StringUtility {
         String formattedJson = restTemplate.getForObject(uri, String.class);
 
         switch (format) {
+            case "txt": {
+                JSONObject json = new JSONObject(formattedJson);
+                String _text = (String) json.get("text");
+                Integer _digits = (Integer) json.get("digits");
+                Integer _upperCase = (Integer) json.get("upperCase");
+                Integer _lowerCase = (Integer) json.get("lowerCase");
+                Integer _whitespace = (Integer) json.get("whitespace");
+                Integer _specialCharacters = (Integer) json.get("specialCharacters");
+
+                formattedJson = String.format("Text: %s\nDigits: %d\nUpper case: %d\nLower case: %d\nWhitespace: %d\nSpecial characters: %d",
+                        _text, _digits, _upperCase, _lowerCase, _whitespace, _specialCharacters);
+                break;
+            }
+
             case "xml": {
                 JSONObject json = new JSONObject(formattedJson);
                 formattedJson = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><stringData>";
