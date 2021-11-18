@@ -1,7 +1,7 @@
 # API
 
 API służące do wyświetlania informacji o podanym ciągu znaków takich jak liczba cyfr, liczba znaków specjalnych itp. w
-trzech formatach: TXT, JSON, XML oraz CSV.
+czterech formatach: TXT, JSON, XML oraz CSV.
 
 ## Użycie
 
